@@ -8,6 +8,11 @@ const int MOTOR_IN4_PIN = 5;
 
 const int STEPS_PER_REVOLUTION = 2048;
 
+//
+// create the stepper motor object
+//
+TinyStepper_28BYJ_48 stepper;
+
 void setup()
 {
     Serial.begin(9600);
