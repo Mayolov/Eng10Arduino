@@ -1,3 +1,6 @@
+//imports the library
+#include <TinyStepper_28BYJ_48.h>
+
 // These are the pins the cables should be in, but can be changed
 // tow whatever
 const int MOTOR_IN1_PIN = 11;
