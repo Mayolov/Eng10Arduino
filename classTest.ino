@@ -1,3 +1,5 @@
+// These are the pins the cables should be in, but can be changed
+// tow whatever
 const int MOTOR_IN1_PIN = 11;
 const int MOTOR_IN2_PIN = 10;
 const int MOTOR_IN3_PIN = 6;
