@@ -35,14 +35,14 @@ void loop()
     stepper.setAccelerationInStepsPerSecondPerSecond(500);
     
     // gets the amount of steps that would be 20 degrees 
-    int oneDeg = 2048/360;
-    int twentyDeg = oneDeg *20;
+    float oneDeg = 2048/360;
+    float twentyDeg = oneDeg*20;
 
     // Initialize a position counter
     int pos = 0;
 
     // for i is less than 361 continue to rotate
-    for(int i = 0; i<361){
+    for(int i = 0; i<361; i+=20){
         // moves to this position in steps
         // at 0 goes to step 0, at 20 goes to steps at 20 degrees,
         // at 40 goes to steps at 40 degrees and so on...
@@ -50,9 +50,7 @@ void loop()
 
         // adds 20 degrees in steps to the previous value
         pos+=twentyDeg;
-        // adds to the counter i
-        i+=20;
-
+        
         // 6 second delay to record the voltage at this step
         delay(6000);
     }
