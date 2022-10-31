@@ -9,23 +9,20 @@
 // tow whatever
 const int MOTOR_IN1_PIN = 11;
 const int MOTOR_IN2_PIN = 10;
-const int MOTOR_IN3_PIN = 6;
-const int MOTOR_IN4_PIN = 5;
+const int MOTOR_IN3_PIN = 9;
+const int MOTOR_IN4_PIN = 8;
 
-
+float leftPanel, rightPanel;
 const int STEPS_PER_REVOLUTION = 2048;
 
-//
 // create the stepper motor object
-//
 TinyStepper_28BYJ_48 stepper;
 
 void setup()
 {
     Serial.begin(9600);
 
-    stepper.connectToPins(MOTOR_IN1_PIN, MOTOR_IN2_PIN, MOTOR_IN3_PIN, MOTOR_IN4_PIN)
-    
+    stepper.connectToPins(MOTOR_IN1_PIN, MOTOR_IN2_PIN, MOTOR_IN3_PIN, MOTOR_IN4_PIN);
 }
 
 void loop()
@@ -35,18 +32,30 @@ void loop()
     stepper.setAccelerationInStepsPerSecondPerSecond(500);
     
     // gets the amount of steps that would be 20 degrees 
-    float oneDeg = 2048/360;
+    float oneDeg = STEPS_PER_REVOLUTION/360;
     float twentyDeg = oneDeg*20;
 
     // Initialize a position counter
     int pos = 0;
-
     // for i is less than 361 continue to rotate
     for(int i = 0; i<361; i+=20){
+
         // moves to this position in steps
         // at 0 goes to step 0, at 20 goes to steps at 20 degrees,
         // at 40 goes to steps at 40 degrees and so on...
         stepper.moveToPositionInSteps(pos);
+
+        // read and convert bits to voltage
+        // Gets and prints the left panel's voltage
+        // wire in analog 1
+        leftPanel = analogRead(A1)*5.0/1024;
+        Serial.print(left);
+
+        // Gets and prints the left panel's voltage
+        // wire in analog 2
+        rightPanel = analogRead(A2)*5.0/1024;
+        Serial.print("   ");
+        Serial.println(right);
 
         // adds 20 degrees in steps to the previous value
         pos+=twentyDeg;
