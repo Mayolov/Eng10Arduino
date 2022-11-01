@@ -37,7 +37,7 @@ void loop()
 
     // Initialize a position counter starting at 20 deg
     float pos = twentyDeg;
-    // fo i is less than 18 keep rotating
+    // for i is less than 18 keep rotating
     for(int i = 0; i<18; i++){
 5
         // moves to this position in steps
