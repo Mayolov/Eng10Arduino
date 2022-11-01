@@ -35,10 +35,10 @@ void loop()
     float oneDeg = STEPS_PER_REVOLUTION/360;
     float twentyDeg = oneDeg*20;
 
-    // Initialize a position counter
-    int pos = 0;
-    // for i is less than 361 continue to rotate
-    for(int i = 0; i<361; i+=20){
+    // Initialize a position counter starting at 20 deg
+    float pos = twentyDeg;
+    // fo i is less than 18 keep rotating
+    for(int i = 0; i<18; i++){
 
         // moves to this position in steps
         // at 0 goes to step 0, at 20 goes to steps at 20 degrees,
@@ -59,7 +59,7 @@ void loop()
 
         // adds 20 degrees in steps to the previous value
         pos+=twentyDeg;
-        
+    
         // 6 second delay to record the voltage at this step
         delay(6000);
     }
