@@ -6,7 +6,7 @@
 #include <TinyStepper_28BYJ_48.h>
 
 // These are the pins the cables should be in, but can be changed
-// tow whatever
+// to whatever
 const int MOTOR_IN1_PIN = 12;
 const int MOTOR_IN2_PIN = 11;
 const int MOTOR_IN3_PIN = 10;
@@ -37,13 +37,12 @@ void loop()
 
     // Initialize a position counter starting at 20 deg
     float pos = twentyDeg;
-    // for i is less than 18 keep rotating
+    // fo i is less than 18 keep rotating
     for(int i = 0; i<18; i++){
-5
         // moves to this position in steps
         // at 0 goes to step 0, at 20 goes to steps at 20 degrees
         // at 40 goes to steps at 40 degrees and so on...
-        ;stepper.moveToPositionInSteps(pos);
+        stepper.moveToPositionInSteps(pos);
 
         // read and convert bits to voltage
         // Gets and prints the left panel's voltage
