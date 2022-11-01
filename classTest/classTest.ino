@@ -7,10 +7,10 @@
 
 // These are the pins the cables should be in, but can be changed
 // tow whatever
-const int MOTOR_IN1_PIN = 11;
-const int MOTOR_IN2_PIN = 10;
-const int MOTOR_IN3_PIN = 9;
-const int MOTOR_IN4_PIN = 8;
+const int MOTOR_IN1_PIN = 12;
+const int MOTOR_IN2_PIN = 11;
+const int MOTOR_IN3_PIN = 10;
+const int MOTOR_IN4_PIN = 9;
 
 float leftPanel, rightPanel;
 const int STEPS_PER_REVOLUTION = 2048;
@@ -39,23 +39,23 @@ void loop()
     float pos = twentyDeg;
     // fo i is less than 18 keep rotating
     for(int i = 0; i<18; i++){
-
+5
         // moves to this position in steps
-        // at 0 goes to step 0, at 20 goes to steps at 20 degrees,
+        // at 0 goes to step 0, at 20 goes to steps at 20 degrees
         // at 40 goes to steps at 40 degrees and so on...
-        stepper.moveToPositionInSteps(pos);
+        ;stepper.moveToPositionInSteps(pos);
 
         // read and convert bits to voltage
         // Gets and prints the left panel's voltage
         // wire in analog 1
         leftPanel = analogRead(A1)*5.0/1024;
-        Serial.print(left);
+        Serial.print(leftPanel);
 
         // Gets and prints the left panel's voltage
         // wire in analog 2
         rightPanel = analogRead(A2)*5.0/1024;
         Serial.print("   ");
-        Serial.println(right);
+        Serial.println(rightPanel);
 
         // adds 20 degrees in steps to the previous value
         pos+=twentyDeg;
