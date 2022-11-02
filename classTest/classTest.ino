@@ -44,6 +44,9 @@ void loop()
         // at 40 goes to steps at 40 degrees and so on...
         stepper.moveToPositionInSteps(pos);
 
+        // Prints the degree position
+        Serial.println(pos + " degrees");
+
         // read and convert bits to voltage
         // Gets and prints the left panel's voltage
         // wire in analog 1
