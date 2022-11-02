@@ -62,4 +62,8 @@ void loop()
         // 6 second delay to record the voltage at this step
         delay(6000);
     }
+    // stepper goes back to zero
+    stepper.moveToPositionInSteps(0);
+    // exit program
+    exit(0);
 }
